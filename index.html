@@ -1,67 +1,278 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fliiko - Curated Stories</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
 
-    <header class="header">
-        <div class="menu-icon">☰</div>
-        <div class="logo">FLIIKO</div>
-        <div class="profile-icon">👤</div>
-    </header>
-
-    <main class="container">
-        <section class="hero">
-            <p class="subtitle">LIBRARY / VOLUME 04</p>
-            <h1>YOUR CURATED STORIES</h1>
-            <p class="description">A personal archive of cinematic journeys, captured through the lens of intentional living. Every frame a memory, every word a legacy.</p>
-            <button class="btn-main">CREAR HISTORIA</button>
-        </section>
-
-        <section class="story-card">
-            <div class="image-placeholder main-img">
-                <span class="badge">LATEST ENTRY</span>
-                </div>
-            <h2>The Silent Echoes of the Amalfi Coast</h2>
-            <p class="date">OCTOBER 2023</p>
-            <blockquote class="quote">"Beauty is found in the stillness of the morning tide."</blockquote>
-            <a href="#" class="read-more">READ THE FEATURE →</a>
-        </section>
-
-        <section class="story-grid">
-            <article class="grid-item">
-                <div class="image-placeholder square"></div>
-                <p class="location">PORTUGAL // 2023</p>
-                <h3>AZURE SOLITUDE</h3>
-                <p class="excerpt">Tracing the rugged cliffs of the Algarve...</p>
-            </article>
-        </section>
-
-        <section class="bottom-actions">
-            <h2>SHARE YOUR PERSPECTIVE</h2>
-            <div class="btn-group">
-                <button class="btn-outline">DRAFTS</button>
-                <button class="btn-main">NEW GALLERY</button>
-            </div>
-        </section>
-    </main>
-
-    <nav class="bottom-nav">
-        <div class="nav-item active">🏠<span>HOME</span></div>
-        <div class="nav-item">📖<span>HISTORIAS</span></div>
-        <div class="nav-item">👤<span>PERFIL</span></div>
-    </nav>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js');
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLIIKO - Home Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;family=Space+Grotesk:wght@300;500&amp;family=Newsreader:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #F5EFE6;
+            color: #2C1A0E;
         }
-    </script>
-</body>
-</html>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar to match editorial feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5EFE6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E8A838;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#ede4d9",
+                      "primary-container": "#e8a838",
+                      "secondary-container": "#f3e0c5",
+                      "surface-variant": "#f9f2eb",
+                      "tertiary-container": "#cee5ff",
+                      "on-surface": "#2C1A0E",
+                      "inverse-primary": "#805600",
+                      "on-primary-fixed": "#281800",
+                      "on-secondary-container": "#514531",
+                      "on-tertiary-fixed": "#001d33",
+                      "outline-variant": "#d5c4af",
+                      "tertiary-fixed": "#cee5ff",
+                      "surface-bright": "#FFFCF7",
+                      "surface-tint": "#e8a838",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#614000",
+                      "primary": "#e8a838",
+                      "on-secondary": "#392f1d",
+                      "on-secondary-fixed-variant": "#514531",
+                      "error-container": "#f9dedc",
+                      "inverse-on-surface": "#f5efe6",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#231a0a",
+                      "on-primary-container": "#281800",
+                      "background": "#F5EFE6",
+                      "surface-container-low": "#faf4ed",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#ffddaf",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#f5efe6",
+                      "secondary-fixed-dim": "#d6c4aa",
+                      "on-error-container": "#410002",
+                      "inverse-surface": "#362f2a",
+                      "surface-container": "#FFFCF7",
+                      "outline": "#9d8e7c",
+                      "secondary-fixed": "#f3e0c5",
+                      "primary-fixed-dim": "#fdba49",
+                      "on-background": "#2C1A0E",
+                      "tertiary": "#00639b",
+                      "tertiary-fixed-dim": "#97cbff",
+                      "on-surface-variant": "#504535",
+                      "surface-container-highest": "#f2e8dc",
+                      "on-tertiary-container": "#001d33",
+                      "secondary": "#635c40",
+                      "error": "#b3261e",
+                      "on-tertiary-fixed-variant": "#004a77",
+                      "surface": "#F5EFE6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "component-padding": "12px",
+                      "section-gap": "80px",
+                      "margin-page": "40px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Plus Jakarta Sans"],
+                      "display-xl": ["Noto Serif"],
+                      "meta-mono": ["Space Grotesk"],
+                      "story-title": ["Newsreader"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                      "meta-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "300"}],
+                      "story-title": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface bg-background">
+<!-- TopAppBar -->
+<header class="bg-[#F5EFE6]/90 backdrop-blur-md border-b border-[#251C14]/10 fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-stone-500 cursor-pointer scale-100 active:scale-95 transition-transform duration-300">menu</span>
+</div>
+<div class="text-2xl font-display-xl tracking-[0.3em] text-[#E8A838]">FLIIKO</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#E8A838]/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a sophisticated woman with natural lighting and soft shadows in an editorial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF-QO4w9PPY03-1Bit-DUMFTcwgb61-6y03nuLMallcPyfAMuA1SeprmcHeRPGCTyWa-2UipRmDMFptNR2bZimZKRK3lxEPNBaKy60_LtC7t6ePGR5fste1pYhlNIuZZ-Eml6YtsXCwbpmmOITStL0g-MV6NVS2PSveZNTYXZPxyJ0ey-vU-Rdnn54O8vCqKD-R-5TwVO3hB8DQls68QE1Zkjgx5fUnuYN_UZoJvh-N0a3xocfA2yfDk9Q-5BchajX-D4ztzy1q9I"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-page max-w-7xl mx-auto">
+<!-- Hero Section / Editorial Header -->
+<section class="mb-section-gap flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="font-meta-mono text-meta-mono text-primary-container mb-4 block">LIBRARY / VOLUME 04</span>
+<h1 class="font-display-xl text-display-xl uppercase mb-6">Your Curated Stories</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+                    A personal archive of cinematic journeys, captured through the lens of intentional living. Every frame a memory, every word a legacy.
+                </p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-[#E8A838] text-white px-10 py-5 rounded-none font-meta-mono text-sm tracking-[0.2em] shadow-lg shadow-[#E8A838]/20 hover:opacity-90 transition-all duration-300 active:scale-95">
+                    CREAR HISTORIA
+                </button>
+</div>
+</section>
+<!-- Featured Story (Asymmetric Layout) -->
+<section class="mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden aspect-[21/9] mb-6">
+<img alt="Featured Story" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="wide cinematic landscape of misty blue mountains at dawn with a single orange light reflecting in a still lake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn8u1eyMoR1TMTH46dRQkX_b3QIT6YtO7JAe76d58QFWLHHLc7XQp6vAvBynXzkk22OFgtKjdunHMRHYtaoeUWt-2cyxLoJIpYoza31JryVN-OiFhePpma72yr8dbIeiww2WnJb_0bJ_LlBMY357_RATwZ2P26YjCGfNmcTopYKFxN6tRMSyz4sTL9ch9BM3gFQXDcZ24fSOKXkV1sDUE0KIneblJcVyiX2Rrz3lva4WLJM9UMZ3EtCuFXFDHXr6tsMVicu5gjvqg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container/80 backdrop-blur-sm px-3 py-1 font-meta-mono text-[10px] tracking-widest uppercase">Latest Entry</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between items-start gap-4">
+<h2 class="font-story-title text-story-title italic">The Silent Echoes of the Amalfi Coast</h2>
+<span class="font-meta-mono text-meta-mono text-outline">OCTOBER 2023</span>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col justify-center border-l border-outline-variant pl-gutter">
+<p class="font-story-title italic text-2xl text-on-surface mb-4">"Beauty is found in the stillness of the morning tide."</p>
+<div class="flex items-center gap-2 text-primary-container">
+<span class="font-meta-mono text-[10px] tracking-widest uppercase cursor-pointer hover:underline">Read the feature</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid for Library Items -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-high mb-6 relative">
+<img alt="Story Card 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="minimalist beach scene with soft beige sand and turquoise water under a bright midday sun high-end travel aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNGOGRJAKEgASO1zlKDINFXaKbeGt43kbBY4iEGONO_O9HQ226IZSRSZH-PIVTGlrY4PaXp6T0-Y0yuB2yOBM8eYDE3REZJULCvb1oYL-jg6dr3pDpSINafhQjxHgJ2vojL-U3u1C5eInYEsqEPq8-QQrh4OFdvgj_jc5gdPqj1t973wWIVF-S-CmUdqenXrWz7bPb3hEgRA7LkcZFVn-00pnTUWMalULq1v1h3MTgN4ym2IWX1NiMfH0ue7b4wFKg1jxw4fAkdBA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#2C1A0E]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="px-2">
+<span class="font-meta-mono text-[10px] text-primary-container tracking-widest uppercase block mb-2">Portugal // 2023</span>
+<h3 class="font-display-xl text-xl uppercase mb-3">Azure Solitude</h3>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Tracing the rugged cliffs of the Algarve as the sun dips below the horizon line.</p>
+</div>
+</div>
+<!-- Card 2 (Elevated Surface) -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-high mb-6 relative">
+<img alt="Story Card 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="cinematic street scene in London with vintage red bus and soft morning fog in a moody editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw2MV0GM_48MhIvpiGWhd8SHzmrOE05MTFuK3eF7EMZFb-PeGXXQHHUVNKuQBlZbjY3cfnHGKSgcpDY-m_4nNPFch4TNgu3w1n1TMcyGciUUHut4cWlHr3n9H7itMSNb8ShRnM107VKkDOoID4uLq4Av-iYdAqG9caRTGjH424hB0Z6OYaTu7eHAetd-sRvhGQGsih6DqQQMbH2m4h8jFgPz9rjOZzY5FbSgoEwUuRbC1OIXQoINWDq9ewbMnBoF5v_zX3pqV_j84"/>
+</div>
+<div class="px-2">
+<span class="font-meta-mono text-[10px] text-primary-container tracking-widest uppercase block mb-2">London // 2023</span>
+<h3 class="font-display-xl text-xl uppercase mb-3">Urban Shadows</h3>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">The architecture of a city told through the interplay of light and brick.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-high mb-6 relative">
+<img alt="Story Card 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="luxury alpine cabin at night surrounded by snowy pine trees with warm light glowing from the windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDouhLhAANh7jca6mgiCl3NTNLjZZ3enn1yizoy0p7sBvB7Yv-OLJ9RwGFoKcpXiemKMfmvcpl-6wfN5o5guTWPVN8z7vJoMrFEIEP_WvfZ7ZLIuPg9JOR1TvIVg7Gj3ecfkAGbF8rmg2z2JGgNNyUpSiC2Msqf4OCeIb_1kdNee3LqC1g_7RkpAPEtZtpjsNyEoz36VbPMbOBXxX725iI7O7vtN7h9hP6LPHVL2lPNhILKb43vrUWkAHX8P6o1R5guykNQhcbqLq8"/>
+</div>
+<div class="px-2">
+<span class="font-meta-mono text-[10px] text-primary-container tracking-widest uppercase block mb-2">Swiss Alps // 2022</span>
+<h3 class="font-display-xl text-xl uppercase mb-3">Summit Silence</h3>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Finding breath at 4000 meters above the worries of the world below.</p>
+</div>
+</div>
+</section>
+<!-- Secondary Large CTA -->
+<section class="mt-section-gap py-20 border-y border-outline-variant flex flex-col items-center text-center">
+<h2 class="font-display-xl text-3xl uppercase mb-8 tracking-widest">Share Your Perspective</h2>
+<p class="font-body-md text-on-surface-variant max-w-md mb-10 italic">
+                "We travel not to escape life, but for life not to escape us." 
+            </p>
+<div class="flex gap-6">
+<button class="border border-primary-container text-primary-container px-8 py-3 font-meta-mono text-[10px] tracking-[0.2em] uppercase hover:bg-primary-container hover:text-white transition-colors">
+                    Drafts
+                </button>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 font-meta-mono text-[10px] tracking-[0.2em] uppercase shadow-lg shadow-primary-container/20">
+                    New Gallery
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#F5EFE6]/95 backdrop-blur-lg border-t border-[#251C14]/10 fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-4 md:hidden">
+<div class="flex flex-col items-center justify-center text-[#E8A838] font-bold active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-meta-mono text-[10px] tracking-widest mt-1">HOME</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 active:scale-90 transition-all duration-300 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-meta-mono text-[10px] tracking-widest mt-1">HISTORIAS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 active:scale-90 transition-all duration-300 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">person</span>
+<span class="font-meta-mono text-[10px] tracking-widest mt-1">PERFIL</span>
+</div>
+</nav>
+<!-- Desktop Navigation Elements (visible in TopAppBar on larger screens) -->
+<style>
+        @media (min-width: 768px) {
+            .desktop-nav {
+                display: flex;
+                gap: 2rem;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .desktop-nav a {
+                font-family: 'Space Grotesk', sans-serif;
+                font-size: 10px;
+                letter-spacing: 0.2em;
+                color: #504535;
+                transition: color 0.3s;
+            }
+            .desktop-nav a.active {
+                color: #E8A838;
+                font-weight: 700;
+            }
+            .desktop-nav a:hover {
+                color: #E8A838;
+            }
+        }
+    </style>
+<!-- Hidden helper for structural navigation logic -->
+<div class="hidden md:block">
+<div class="desktop-nav fixed top-6 z-[60] pointer-events-none">
+<div class="pointer-events-auto flex gap-8">
+<a class="active" href="#">HOME</a>
+<a href="#">EXPLORE</a>
+<a href="#">CREATE</a>
+<a href="#">TIMELINE</a>
+<a href="#">PROFILE</a>
+</div>
+</div>
+</div>
+</body></html>
