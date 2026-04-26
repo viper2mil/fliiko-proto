@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fliiko - Curated Stories</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="menu-icon">☰</div>
+        <div class="logo">FLIIKO</div>
+        <div class="profile-icon">👤</div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="subtitle">LIBRARY / VOLUME 04</p>
+            <h1>YOUR CURATED STORIES</h1>
+            <p class="description">A personal archive of cinematic journeys, captured through the lens of intentional living. Every frame a memory, every word a legacy.</p>
+            <button class="btn-main">CREAR HISTORIA</button>
+        </section>
+
+        <section class="story-card">
+            <div class="image-placeholder main-img">
+                <span class="badge">LATEST ENTRY</span>
+                </div>
+            <h2>The Silent Echoes of the Amalfi Coast</h2>
+            <p class="date">OCTOBER 2023</p>
+            <blockquote class="quote">"Beauty is found in the stillness of the morning tide."</blockquote>
+            <a href="#" class="read-more">READ THE FEATURE →</a>
+        </section>
+
+        <section class="story-grid">
+            <article class="grid-item">
+                <div class="image-placeholder square"></div>
+                <p class="location">PORTUGAL // 2023</p>
+                <h3>AZURE SOLITUDE</h3>
+                <p class="excerpt">Tracing the rugged cliffs of the Algarve...</p>
+            </article>
+        </section>
+
+        <section class="bottom-actions">
+            <h2>SHARE YOUR PERSPECTIVE</h2>
+            <div class="btn-group">
+                <button class="btn-outline">DRAFTS</button>
+                <button class="btn-main">NEW GALLERY</button>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <div class="nav-item active">🏠<span>HOME</span></div>
+        <div class="nav-item">📖<span>HISTORIAS</span></div>
+        <div class="nav-item">👤<span>PERFIL</span></div>
+    </nav>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+</body>
+</html>
