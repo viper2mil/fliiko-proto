@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;family=Space+Grotesk:wght@300..700&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#97cbff",
+                        "secondary-fixed-dim": "#d6c4aa",
+                        "primary-fixed-dim": "#fdba49",
+                        "surface-dim": "#F0E9DF",
+                        "surface-container-highest": "#E8E0D5",
+                        "inverse-surface": "#2C1A0E",
+                        "primary-fixed": "#ffddaf",
+                        "on-secondary-fixed-variant": "#514531",
+                        "outline": "#9d8e7c",
+                        "on-background": "#2C1A0E",
+                        "on-error": "#690005",
+                        "surface-tint": "#E8A838",
+                        "surface-bright": "#FFFCF7",
+                        "tertiary": "#004975",
+                        "on-tertiary-fixed-variant": "#cee5ff",
+                        "tertiary-fixed": "#cee5ff",
+                        "outline-variant": "#D5C4AF",
+                        "surface-container-lowest": "#FFFFFF",
+                        "surface": "#FFFCF7",
+                        "on-primary": "#FFFFFF",
+                        "surface-container-low": "#FBF6F0",
+                        "on-secondary-container": "#514531",
+                        "on-primary-fixed": "#281800",
+                        "on-tertiary": "#FFFFFF",
+                        "on-surface": "#2C1A0E",
+                        "primary": "#E8A838",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#F5EFE6",
+                        "on-tertiary-container": "#aad4ff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#f3e0c5",
+                        "secondary-container": "#f3e0c5",
+                        "inverse-primary": "#fdba49",
+                        "on-secondary-fixed": "#231a0a",
+                        "on-secondary": "#392f1d",
+                        "on-primary-container": "#281800",
+                        "on-surface-variant": "#514531",
+                        "on-tertiary-fixed": "#001d33",
+                        "primary-container": "#E8A838",
+                        "surface-variant": "#F5EFE6",
+                        "secondary": "#514531",
+                        "on-primary-fixed-variant": "#614000",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#cee5ff",
+                        "surface-container-high": "#F5EFE6",
+                        "surface-container": "#FBF6F0",
+                        "background": "#F5EFE6"
+                        
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "component-padding": "12px",
+                        "margin-page": "40px",
+                        "unit": "4px",
+                        "section-gap": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "story-title": ["Newsreader"],
+                        "display-xl": ["Noto Serif"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "meta-mono": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "story-title": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "meta-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F5EFE6;
+            color: #2C1A0E;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .cinematic-shadow {
+            box-shadow: 0 10px 30px -15px rgba(44, 26, 14, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-10 h-16 bg-[#F5EFE6]/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<span class="text-xl font-story-title italic tracking-tighter text-primary">FLIIKO</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center justify-center w-10 h-10 transition-opacity active:opacity-70">
+<span class="material-symbols-outlined text-[#2C1A0E]">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-outline-variant flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Minimalist professional portrait of a user for profile avatar with soft natural studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE8QJrz7t9xDdlR-mp27bzMtRT5_sd6UH8ov0pe662XbhpDYyJg1JoP6cPC2YqQkQbR9guhVJLYaYe0A1-CpF5IP6ezzwJKZETpf9hniYW6SduCt6Wx2l2P_HKYhjq-BrgMPEbavaleQ6lbcV100DT43o6k83rce7J2FoyL--DJxyQ4iQPUrE5wzquAEsdm4sqBx9M24qKcKMOob1sI5cgLblAWsDO5LtO1f7QzD6jd30GAQ97wAVSgx4VkBJmvVMk0j0GJd9a7vU"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-page max-w-5xl mx-auto space-y-section-gap">
+<!-- Cinematic Video Demo Section -->
+<section class="w-full">
+<div class="relative aspect-video w-full overflow-hidden bg-surface-container rounded-lg cinematic-shadow group">
+<img class="w-full h-full object-cover" data-alt="Cinematic wide shot of a vintage film projector in a dimly lit room with dust motes dancing in the light beam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6_-SbtITJTQy7t_p0lGe5nUNNh_3WEt8iMl6ec338OoPhZSmczWPnjTjr4pI7o6vtZrI1MaieWxJ2PgswECf2PeeDaELKHurorOdNlvHz_EPl82jdhvUD4cqMGWthmIknXGBXMtT7OGN2HU63FVYvvxqcNyLJSUhJWklt-iG4JoCLy2snmtJfzfCgSFsuaXjAKYm1FGzbHbx3BOaSzwD1fGWGEn6i8kBYUwwm4e5dW7E1ctoVtEBvuj4I1k-55K6TogkLCGnBX9k"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full border border-white/50 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-500 cursor-pointer">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-6 left-6">
+<p class="font-meta-mono text-white text-[10px] uppercase tracking-[0.2em] mb-1">Demo</p>
+<h2 class="font-story-title italic text-white text-2xl">El arte de recordar</h2>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="w-full">
+<button class="w-full py-6 bg-primary text-on-primary-container font-body-md font-semibold tracking-widest flex items-center justify-center gap-3 active:scale-[0.98] transition-transform duration-200 shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 600;">add</span>
+<span class="uppercase">CREAR HISTORIA</span>
+</button>
+</section>
+<!-- Past Stories / Empty State -->
+<section class="w-full space-y-10">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4">
+<h3 class="font-story-title italic text-2xl text-on-surface">Tus historias</h3>
+<span class="font-meta-mono text-[10px] text-on-surface-variant uppercase tracking-widest">0 archivos</span>
+</div>
+<div class="flex flex-col items-center justify-center py-20 text-center space-y-4">
+<div class="w-px h-12 bg-outline-variant/40 mb-2"></div>
+<p class="font-story-title italic text-on-surface-variant text-xl">Tu archivo está vacío</p>
+<p class="text-on-surface-variant max-w-xs text-sm leading-relaxed">Comienza a capturar momentos para construir tu narrativa personal.</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#F5EFE6]/90 backdrop-blur-xl border-t border-outline-variant/30">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-105 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-meta-mono text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Historias -->
+<a class="flex flex-col items-center justify-center text-primary/40 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-meta-mono text-[10px] uppercase tracking-widest mt-1">Historias</span>
+</a>
+<!-- Perfil -->
+<a class="flex flex-col items-center justify-center text-primary/40 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-meta-mono text-[10px] uppercase tracking-widest mt-1">Perfil</span>
+</a>
+</nav>
+</body></html>
